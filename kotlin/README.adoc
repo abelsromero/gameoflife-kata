@@ -1,0 +1,30 @@
+= Game of life Kata in Kotlin
+
+Variant of http://codingdojo.org/kata/GameOfLife/ in which the board is generated randomly.
+See https://bitstorm.org/gameoflife/ for simulator.
+
+== Approach
+
+. Started creating a board with all dead cells
+. Implemented iteration logic on single cases
+. Finally implemented board randomizer
+
+== TODO
+
+To be able to create a board from an input like this.
+
+....
+........
+....*...
+...**...
+........
+....
+
+Another companion method in `Board` could be added without much complexity.
+
+== Evolution
+
+In case new types of cells need to be considered.
+New types of `Cell` can be easily created thanks to the use of https://kotlinlang.org/docs/reference/sealed-classes.html[Kotlin sealed classes].
+Furthermore, each type of cell could iterate independently just implementing a method like `iterate(neighbours:Int)`.
+This would avoid changes in the already convoluted logic of `Board::interate()`.
